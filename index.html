@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Noto+Serif&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.css">
+  <title>Online Tarot Reader.</title>
+</head>
+<body>
+  <header>
+    <h1>Consult the Cards</h1>
+    <form action="">
+      <label for="question" class="sr-only">Question:</label>
+      <input type="text" name="question" id="question" placeholder="Just don't ask if you'll find love. That's so cliché. (jk don't let the internet tell you how to live)">
+      <button><a href="#main">Click Me.</a></button>
+    </form>
+  </header>
+  <main id="main">
+    <div class="cards">
+      <div class="card-container">
+        <h2>The Past</h2>
+        <p>(Click Me)</p>
+      </div>
+      <div class="card-container">
+          <h2>The Present</h2>
+          <p>(Click Me)</p>
+        </div>
+      <div class="card-container">
+          <h2>The Future</h2>
+          <p>(Click Me)</p>
+        </div>
+    </div>
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-scrollbar@latest/simple-scrollbar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
