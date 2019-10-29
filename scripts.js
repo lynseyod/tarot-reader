@@ -18,13 +18,12 @@ $(function(){
       const currentCard = this;
       
       $.ajax({
-        // url: 'http://proxy.hackeryou.com',
-        url: 'https://rws-cards-api.herokuapp.com/api/v1/cards/random',
+        url: 'http://proxy.hackeryou.com',
         dataType: 'json',
         method:'GET',
-        // data: {
-        //   reqUrl: 'https://rws-cards-api.herokuapp.com/api/v1/cards/random',
-        // }
+        data: {
+          reqUrl: 'https://rws-cards-api.herokuapp.com/api/v1/cards/random',
+        }
       }).then(function(result) {
         const cardArray = result.cards
         cardArray.forEach((card) => {
