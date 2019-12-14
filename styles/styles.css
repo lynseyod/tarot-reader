@@ -135,6 +135,8 @@ main {
   align-items: center;
   justify-content: center;
   animation: spin 1s linear infinite;
+  font-size: 4rem;
+  color: yellow;
 }
 
 @keyframes spin {
