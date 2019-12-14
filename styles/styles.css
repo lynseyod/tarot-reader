@@ -180,6 +180,7 @@ main {
   .card-container {
     height: 90vh;
     width: 90%;
+    max-width: 50vh;
     margin: 5vh auto;
   }
 
