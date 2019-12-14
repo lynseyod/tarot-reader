@@ -1,8 +1,12 @@
 const tarotReader = {};
 
 tarotReader.displayCards = () => {
-  $('a').on("click", () => {
+  $('button').on("click", (e) => {
+    e.preventDefault();
     $('main').removeClass("hidden");
+    $('html, body').animate({
+      scrollTop: $('#main').offset().top
+  }, 2000);
   })
 }
 
@@ -19,6 +23,7 @@ tarotReader.flipCards = function() {
 }
 
 tarotReader.getCardInfo = function(cardIClicked) {
+  $(cardIClicked).html(`<div class="loading"><p><i class="fas fa-star"></i></p><p><i class="fas fa-moon"></i></p><p><i class="fas fa-sun"></i></p></div>`)
   $.ajax({
     url: 'https://proxy.hackeryou.com',
     dataType: 'json',
@@ -27,6 +32,7 @@ tarotReader.getCardInfo = function(cardIClicked) {
       reqUrl: 'https://rws-cards-api.herokuapp.com/api/v1/cards/random',
     }
   }).then(function(result) {
+    console.log(result);
     const cardArray = result.cards
     cardArray.forEach(function(card) {
       const cardName = card.name;
@@ -35,13 +41,9 @@ tarotReader.getCardInfo = function(cardIClicked) {
       const cardHtml = `
         <h2>${cardName}</h2>
         <h3>Description:</h3>
-        <div ss-container class="description-container">
-          <p>${cardDescription}</p>
-        </div>
+        <p>${cardDescription}</p>
         <h3>Meaning:</h3>
-        <div class="meaning-container" ss-container>
-          <p>${cardMeaning}</p>
-        </div>
+        <p>${cardMeaning}</p>
         `
         $(cardIClicked).html(cardHtml)
       })

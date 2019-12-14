@@ -53,23 +53,6 @@ input[type="text"] {
 }
 
 button {
-  background: none;
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
-a:hover,
-a:focus {
-  border-bottom: none;
-  border-right: none;
-  border-top: 2px solid rgba(0,0,0,0.7);
-  border-left: 2px solid rgba(0,0,0,0.7);
-}
-
-a {
-  display: inline-block;
-  text-decoration: none;
   border: none;
   background: rgba(0,0,0,0.2);
   border-radius: 10px;
@@ -78,6 +61,14 @@ a {
   padding: 10px;
   margin-top: 50px;
   color: black;
+}
+
+button:hover,
+button:focus {
+  border-bottom: none;
+  border-right: none;
+  border-top: 2px solid rgba(0,0,0,0.7);
+  border-left: 2px solid rgba(0,0,0,0.7);
 }
 
 .hidden {
@@ -133,18 +124,35 @@ main {
   height: 100%;
   width: 23%;
   border-radius: 10px;
+  overflow: auto;
+  padding: 20px;
 }
 
-.description-container {
-  width: 95%;
-  height: 55%;
-  overflow: auto;
+.loading {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 1s linear infinite;
 }
 
-.meaning-container {
-  width: 95%;
-  height: 30%;
-  overflow: auto;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg)
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .cards {
